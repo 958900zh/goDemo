@@ -12,7 +12,7 @@ type Node struct {
 
 //为结构定义方法
 func (node Node) GetValue() {
-	fmt.Print(node.Value)
+	fmt.Println(node.Value)
 }
 
 func (node *Node) SetValue(value int) {

@@ -19,6 +19,7 @@ func main() {
 
 	root = tree.Node{Value: 5}
 	root.Left = &tree.Node{}
+	root.Left.Right = &tree.Node{Value: 6}
 	root.Right = &tree.Node{8, nil, nil}
 	root.Right.Left = new(tree.Node)
 	fmt.Println(root)
@@ -30,4 +31,11 @@ func main() {
 	}
 	fmt.Println(nodes)
 	root.GetValue()
+	root.Traverse()
+
+	nodeCount := 0
+	root.TraverseFunc(func(node *tree.Node) {
+		nodeCount++
+	})
+	fmt.Println(nodeCount)
 }
